@@ -1,0 +1,110 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# Flutter/Dart
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Xcode
+**/ios/**/xcuserdata/
+**/ios/**/Flutter/Flutter.framework
+**/ios/**/Flutter/Flutter.podspec
+**/ios/**/Flutter/Generated.xcconfig
+**/ios/**/Flutter/app.flx
+**/ios/**/Flutter/app.zip
+**/ios/**/Flutter/flutter_assets/
+**/ios/**/Flutter/flutter_export_environment.sh
+**/ios/**/Generated.xcconfig
+
+# Android
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/key.properties
+**/*.keystore
+**/*.jks
+
+# Deployment keys and sensitive info
+**/android/app/google-services.json
+**/ios/Runner/GoogleService-Info.plist
+
+# Releases
+*.app
+*.ipa
+*.aab
+
+# Backup files
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Generated files
+*.g.dart
+*.freezed.dart
+
+# Large binary files
+*.mov
+*.mp4
+*.mp3
+*.wav
+*.jpg
+*.jpeg
+*.gif
+*.png
+*.apk
+*.zip
+
+# Temp files
+*~
+.fuse_hidden*
