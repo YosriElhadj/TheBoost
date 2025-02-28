@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'main.dart';
+
 
 class LearnMorePage extends StatelessWidget {
   @override
@@ -70,9 +70,7 @@ class LearnMorePage extends StatelessWidget {
             TeamSection(),
             RoadmapSection(),
             PartnersSection(),
-            FAQSection(),
-            CallToActionSection(),
-            FooterSection(),
+          
           ],
         ),
       ),

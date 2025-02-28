@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Import this from your landing page file
-import 'main.dart' show FooterSection;
-
 class FeaturesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -74,7 +71,6 @@ class FeaturesPage extends StatelessWidget {
             _TestimonialsSection(),
             _CallToActionSection(),
             // Use the FooterSection from the landing page
-            FooterSection(),
             
             // Temporary footer until we import the one from landing page
             //FooterSection(),
