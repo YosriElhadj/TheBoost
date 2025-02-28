@@ -1,6 +1,9 @@
+// service_locator.dart
+
 import 'package:get_it/get_it.dart';
-import 'package:my_flutter_app/domain/repositories/auth_repository.dart';
+import '../../data/repositories/auth_repository_mock.dart';
 import '../../data/repositories/property_repository_impl.dart';
+import '../../domain/repositories/auth_repository.dart';
 import '../../domain/repositories/property_repository.dart';
 import '../../domain/usecases/auth/login_usecase.dart';
 import '../../domain/usecases/auth/register_usecase.dart';
@@ -16,8 +19,15 @@ void setupServiceLocator() {
     () => PropertyRepositoryImpl(),
   );
   
+  // Add this line to register AuthRepository
+  getIt.registerLazySingleton<AuthRepository>(
+    () => AuthRepositoryMock(), // This is a mock implementation for now
+  );
+  
   // Use cases
   getIt.registerLazySingleton(() => GetPropertiesUseCase(getIt<PropertyRepository>()));
+  
+  // Update these to use the registered AuthRepository
   getIt.registerLazySingleton(() => LoginUseCase(getIt<AuthRepository>()));
   getIt.registerLazySingleton(() => RegisterUseCase(getIt<AuthRepository>()));
   

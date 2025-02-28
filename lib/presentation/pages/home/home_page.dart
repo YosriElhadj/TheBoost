@@ -1,6 +1,5 @@
 // presentation/pages/home/home_page.dart
 import 'package:flutter/material.dart';
-import '../../../core/constants/colors.dart';
 import '../../../core/utils/responsive_helper.dart';
 import '../../widgets/hero_section.dart';
 import '../../widgets/features_grid.dart';

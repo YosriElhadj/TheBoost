@@ -1,3 +1,4 @@
+// main.dart (updated)
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -50,6 +51,20 @@ class TheBoostApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.home,
         onGenerateRoute: AppRoutes.generateRoute,
+        builder: (context, child) {
+          return Consumer<AuthController>(
+            builder: (context, authController, _) {
+              // Redirect to dashboard if logged in and trying to access auth page
+              if (child?.key == ValueKey('AuthPage') && authController.isAuthenticated) {
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  Navigator.of(context).pushReplacementNamed(AppRoutes.dashboard);
+                });
+              }
+              
+              return child!;
+            },
+          );
+        },
       ),
     );
   }
