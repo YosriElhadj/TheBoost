@@ -1,4 +1,4 @@
-// presentation/pages/invest/widgets/investment_card.dart
+// This is an updated version of the investment_card.dart file
 import 'package:flutter/material.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/dimensions.dart';
@@ -97,6 +97,7 @@ class InvestmentCard extends StatelessWidget {
               padding: EdgeInsets.all(AppDimensions.paddingM),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min, // Add this line
                 children: [
                   // Category chip
                   Container(
@@ -116,13 +117,15 @@ class InvestmentCard extends StatelessWidget {
                   SizedBox(height: 8),
                   
                   // Property title
-                  Text(
-                    property.title,
-                    style: AppTextStyles.h4.copyWith(
-                      fontSize: 16,
+                  Flexible(  // Wrap in Flexible
+                    child: Text(
+                      property.title,
+                      style: AppTextStyles.h4.copyWith(
+                        fontSize: 16,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 4),
                   
@@ -171,7 +174,7 @@ class InvestmentCard extends StatelessWidget {
                     ],
                   ),
                   
-                  Spacer(),
+                  Spacer(), // Use Spacer to push remaining content to the bottom
                   
                   // Funding progress
                   Column(
@@ -209,15 +212,22 @@ class InvestmentCard extends StatelessWidget {
                   ),
                   SizedBox(height: 16),
                   
-                  // Invest button
-                  SizedBox(
+                  // Invest button - ensure this is at the bottom
+                  Container(
                     width: double.infinity,
+                    height: 40, // Explicitly set a height for the button
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/property-details',
+                          arguments: property.id,
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 12),
+                        padding: EdgeInsets.symmetric(vertical: 0), // Reduce vertical padding
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -226,6 +236,7 @@ class InvestmentCard extends StatelessWidget {
                         'Invest Now',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontSize: 14, // Slightly reduce font size
                         ),
                       ),
                     ),
