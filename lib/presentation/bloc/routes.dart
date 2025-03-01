@@ -1,4 +1,4 @@
-// routes.dart
+// lib/presentation/bloc/routes.dart (updated)
 import 'package:flutter/material.dart';
 import '../../features_page.dart';
 import '../pages/auth/auth_page.dart';
@@ -6,6 +6,7 @@ import '../pages/auth/forgot_password_page.dart';
 import '../pages/dashboard/dashboard_page.dart';
 import '../pages/home/home_page.dart';
 import '../pages/investments/invest_page.dart';
+import '../pages/profile/profile_page.dart';  // Add this import
 import '../pages/property_details/property_details_page.dart';
 import '../widgets/howitworks_page.dart';
 import '../widgets/learn_more_page.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String learnMore = '/learn-more';
   static const String propertyDetails = '/property-details';
   static const String forgotPassword = '/forgot-password';
+  static const String profile = '/profile';  // Add this route
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,6 +46,8 @@ class AppRoutes {
         );
       case forgotPassword:
         return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
+      case profile:  // Add this case
+        return MaterialPageRoute(builder: (_) => ProfilePage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
