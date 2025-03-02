@@ -260,7 +260,7 @@ class AppNavBar extends StatelessWidget {
             Navigator.pushNamed(context, '/dashboard');
             break;
           case 'profile':
-            // Navigate to profile page
+            Navigator.pushNamed(context, '/profile');
             break;
           case 'investments':
             // Navigate to investments page
@@ -301,7 +301,7 @@ class AppNavBar extends StatelessWidget {
                   title: Text('My Profile'),
                   onTap: () {
                     Navigator.pop(context);
-                    // Navigate to profile page
+                        Navigator.pushNamed(context, '/profile');
                   },
                 ),
                 ListTile(
